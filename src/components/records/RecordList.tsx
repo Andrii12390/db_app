@@ -4,7 +4,7 @@ interface RecordListProps {
 
 const RecordList = ({children}: RecordListProps) => {
   return (
-    <div className="min-h-48">
+    <div className="min-h-[196px]">
       {children}
     </div>
   )

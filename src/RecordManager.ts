@@ -77,6 +77,7 @@ class RecordManager {
     } 
     
     while (left <= right) {
+      console.log("----------------------------------------------------------")
       const mid = Math.floor(left + ((right - left) / (this.records[right].id - this.records[left].id)) * (targetId - this.records[left].id));
 
       if (mid < 0 || mid >= this.records.length) {

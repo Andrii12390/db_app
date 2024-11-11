@@ -27,6 +27,7 @@ const GenerateRecordForm = ({ generateRecords }: RecordFormProps) => {
         Icon={Shuffle}
         value={quantity}
         onChange={setQuantity}
+        autoFocus
       />
       <button
         className="text-white w-48 bg-primary-200 rounded-md px-2 py-1 font-semibold hover:bg-primary-100 transition-colors duration-300"
