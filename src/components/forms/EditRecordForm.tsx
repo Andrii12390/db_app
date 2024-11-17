@@ -12,7 +12,7 @@ interface EditRecordProps {
   handleSave: (username: string, password: string) => void;
 }
 
-const EditRecord = ({
+const EditRecordForm = ({
   isOpen,
   initialUsername,
   initialPassword,
@@ -59,4 +59,4 @@ const EditRecord = ({
   );
 };
 
-export default EditRecord;
+export default EditRecordForm;

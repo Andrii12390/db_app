@@ -12,6 +12,7 @@ const AppLayout = () => {
   const recordManager = useRef(new RecordManager()).current;
   const [searchText, setSearchText] = useState("");
   const [option, setOption] = useState("Add");
+
   useEffect(() => {
     const loadData = async () => {
       await recordManager.loadRecords();
@@ -70,7 +71,7 @@ const AppLayout = () => {
               className={`text-lg font-semibold border-b-2 ${
                 option === "Add"
                   ? "border-primary-200"
-                  : "border-transparent text-gray-600"
+                  : "border-transparent"
               }`}
               onClick={() => setOption("Add")}
             >
@@ -80,7 +81,7 @@ const AppLayout = () => {
               className={`text-lg font-semibold border-b-2 ${
                 option === "Generate"
                   ? "border-primary-200"
-                  : "border-transparent text-gray-600"
+                  : "border-transparent"
               }`}
               onClick={() => setOption("Generate")}
             >

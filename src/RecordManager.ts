@@ -69,34 +69,21 @@ class RecordManager {
     let left = 0;
     let right = this.records.length - 1;
 
-    if(this.records.length === 1) {
-      if(this.records[0].id === targetId) {
-        return this.records[0]
-      }
-      return undefined
-    } 
-    
     while (left <= right) {
-      console.log("----------------------------------------------------------")
-      const mid = Math.floor(left + ((right - left) / (this.records[right].id - this.records[left].id)) * (targetId - this.records[left].id));
-
-      if (mid < 0 || mid >= this.records.length) {
-        break;
+      const mid = Math.floor((left + right) / 2);
+      
+      if (this.records[mid].id === targetId) {
+        return this.records[mid];
       }
-      const midRecord = this.records[mid];
-
-      if (midRecord.id === targetId) {
-        return midRecord; 
-      }
-      if (midRecord.id < targetId) {
-        left = mid + 1; 
+  
+      if (this.records[mid].id < targetId) {
+        left = mid + 1;
       } else {
-        right = mid - 1; 
+        right = mid - 1;
       }
     }
     return undefined; 
   }
-
   searchRecordById(id: number): RecordItem | undefined {
     const record = this.sharrSearch(id);
     if (record) {

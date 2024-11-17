@@ -1,7 +1,7 @@
 import { Trash, Pencil } from "lucide-react";
 import { useState } from "react";
-import EditRecord from "../forms/EditRecord";
 import { RecordItem } from "../../types";
+import EditRecordForm from "../forms/EditRecordForm";
 
 interface RecordProps {
   data: RecordItem;
@@ -12,36 +12,40 @@ interface RecordProps {
 const Record = ({ data, handleDelete, handleEdit }: RecordProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const onSaveChanges = (username: string, password: string) => {
+  const handleSave = (username: string, password: string) => {
     handleEdit(data.id, username, password);
     setIsOpen(false);
   };
 
-  const buttonStyle = "p-1 hover:bg-secondary-200 dark:hover:bg-dark-100 rounded-md transition-all duration-300";
+  const iconStyle = "p-1 hover:bg-secondary-200 dark:hover:bg-dark-100 rounded-md transition-all duration-300";
 
   return (
     <div className="grid grid-cols-3 border-b border-slate-300 dark:border-neutral-600 px-3 py-1 dark:bg-dark-200 dark:text-light-100">
       <div className="flex gap-4">
         <div className="flex gap-1 items-center">
-          <button className={buttonStyle} onClick={() => setIsOpen(true)}>
-            <Pencil size={17} strokeWidth={1.5}/>
-          </button>
-          <button className={buttonStyle} onClick={() => handleDelete(data.id)}>
-            <Trash size={17} strokeWidth={1.5}/>
-          </button>
+          <Pencil
+            className={iconStyle}
+            onClick={() => setIsOpen(true)}
+            strokeWidth={1.5}
+          />
+          <Trash
+            className={iconStyle}
+            onClick={() => handleDelete(data.id)}
+            strokeWidth={1.5}
+          />
         </div>
-        <div>{data.id}</div>
+        <div className="select-none">{data.id}</div>
       </div>
       <div className="text-right">{data.username}</div>
       <div className="text-right">{data.password}</div>
 
       {isOpen && (
-        <EditRecord
+        <EditRecordForm
           isOpen={isOpen}
           initialUsername={data.username}
           initialPassword={data.password}
           handleClose={() => setIsOpen(false)}
-          handleSave={onSaveChanges}
+          handleSave={handleSave}
         />
       )}
     </div>

@@ -22,3 +22,6 @@ code {
   background: transparent;
 }
 
+* {
+  user-select: none;
+}
