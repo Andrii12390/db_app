@@ -24,7 +24,7 @@ const FormInput = ({ value, onChange, Icon, placeholder, autoFocus = false }: Fo
           size={18}
           className="absolute right-1 top-3 cursor-pointer text-slate-500 hover:text-slate-400 transition-colors duration-300"
           onClick={handleClear}
-          strokeWidth={1}
+          strokeWidth={1.5}
         />
       )}
       <input

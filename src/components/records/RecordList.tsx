@@ -11,7 +11,7 @@ interface RecordListProps {
 
 const RecordList = ({ records, handleDelete, handleEdit }: RecordListProps) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const recordsPerPage = 11;
+  const recordsPerPage = 10;
 
   const currentRecords = records?.slice(
     (currentPage - 1) * recordsPerPage,

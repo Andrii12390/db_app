@@ -18,7 +18,6 @@ const AppLayout = () => {
       await recordManager.loadRecords();
       setRecords(recordManager.getRecords());
     };
-
     loadData();
   }, [recordManager]);
 
@@ -42,6 +41,10 @@ const AppLayout = () => {
   };
 
   const editRecord = async (id: number, username: string, password: string) => {
+    if (!username || !password) {
+      toast.error("You should fill in all fields ")
+      return;
+    }
     await recordManager.editRecord(id, username, password);
     await recordManager.loadRecords();
     setRecords(recordManager.getRecords());
@@ -64,7 +67,7 @@ const AppLayout = () => {
   return (
     <div className="h-full bg-gradient flex flex-col">
       <Header />
-      <div className="p-5 flex gap-5 overflow-y-auto">
+      <div className="p-5 flex gap-5">
         <div className="flex flex-col gap-y-1">
           <div className="flex justify-center gap-x-3 mb-4">
             <button

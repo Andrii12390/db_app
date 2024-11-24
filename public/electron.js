@@ -29,8 +29,8 @@ class ElectronApp {
     });
 
     this.mainWindow.setMenuBarVisibility(false);
-    this.mainWindow.loadURL('http://localhost:3000');
-    // this.mainWindow.loadFile(path.join(__dirname, 'index.html'));
+    // this.mainWindow.loadURL('http://localhost:3000');
+    this.mainWindow.loadFile(path.join(__dirname, 'index.html'));
   }
 
   getUserDataPath(folderName) {

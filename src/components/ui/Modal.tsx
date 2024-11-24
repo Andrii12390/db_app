@@ -25,7 +25,7 @@ const Modal = ({ isOpen, handleClose, children }: ModalProps) => {
               onClick={handleClose}
               className="absolute top-1 right-1 p-1 transition-colors duration-300 rounded-md hover:bg-secondary-200 dark:hover:bg-dark-100"
             >
-              <X />
+              <X strokeWidth={1} className="text-slate-500"/>
             </button>
             <div className="p-10 rounded-md bg-light-100 dark:bg-dark-200">
               {children}

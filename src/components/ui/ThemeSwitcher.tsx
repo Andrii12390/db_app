@@ -8,6 +8,7 @@ const ThemeSwitcher = () => {
     setIsDark(!isDark);
     document.body.classList.toggle("dark");
   }
+  
   return (
     <div className="p-1 hover:bg-slate-200 dark:hover:bg-dark-100 transition-colors duration-300 rounded-md"
     onClick={() => handleToggle()}>

@@ -30,6 +30,7 @@ const EditRecordForm = ({
           Icon={UserRound}
           value={newUsername}
           onChange={setNewUsername}
+          autoFocus
         />
         <FormInput
           placeholder="Password"
@@ -39,7 +40,7 @@ const EditRecordForm = ({
         />
         <div className="flex justify-between gap-2">
           <button
-            className="w-1/2 px-5 py-1 text-white bg-primary-200 rounded-md font-semibold hover:bg-primary-100 transition-colors duration-2"
+            className="w-1/2 py-1 text-white bg-primary-200 rounded-md font-semibold hover:bg-primary-100 transition-colors duration-300"
             onClick={() => {
               handleSave(newUsername, newPassword);
               handleClose();

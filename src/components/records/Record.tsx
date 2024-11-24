@@ -34,7 +34,7 @@ const Record = ({ data, handleDelete, handleEdit }: RecordProps) => {
             strokeWidth={1.5}
           />
         </div>
-        <div className="select-none">{data.id}</div>
+        <div>{data.id}</div>
       </div>
       <div className="text-right">{data.username}</div>
       <div className="text-right">{data.password}</div>

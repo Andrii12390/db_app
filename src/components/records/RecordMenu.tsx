@@ -16,7 +16,7 @@ const RecordMenu = ({ records, deleteRecord, editRecord, searchText, onSearchCha
   return (
     <div className="flex w-full h-full flex-col gap-2">
       <SearchInput searchText={searchText} onSearchChange={onSearchChange}/>
-      <div className="w-full bg-light-100 rounded-md shadow-md flex flex-col overflow-y-auto no-scrollbar dark:bg-dark-200 gap-y-2">
+      <div className="w-full bg-light-100 rounded-md shadow-md flex flex-col  dark:bg-dark-200 gap-2">
         <RecordListTitle columns={columns}/>
         <RecordList records={records} handleEdit={editRecord} handleDelete={deleteRecord}/>
       </div>

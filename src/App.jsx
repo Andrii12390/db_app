@@ -5,7 +5,7 @@ const App = () => {
  
   return (
     <div className="h-dvh">
-        <Toaster position="top-right"/>
+        <Toaster position="top-right" />
         <AppLayout/>
     </div>
   );

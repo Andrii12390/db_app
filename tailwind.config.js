@@ -10,13 +10,13 @@ module.exports = {
         'gradient': 'linear-gradient(to top right, #97c4fd, #d5b5fe)',
       },
       colors: {
-        'primary-200': "#818cf8",
         'primary-100': "#a5b4fc",
+        'primary-200': "#818cf8",
         'secondary-100': "##f1f5f9",
         'secondary-200': "#e8ecf4",
-        'light-100':  '#f8f4fc',
+        "dark-100": "#404040",
         'dark-200': "#262626",
-        "dark-100": "#404040"
+        'light-100':  '#f8f4fc',
       }
     },
   },
